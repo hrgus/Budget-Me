@@ -1,4 +1,9 @@
 import './App.css';
+import BudgetPage from './Components/BudgetPage';
+import NavBar from './Components/NavBar';
+import SavingsPage from './Components/SavingsPage';
+import TransactionItem from './Components/TransactionItem';
+import TransactionsList from './Components/TransactionsList';
 
 function App() {
   return (
@@ -9,3 +14,4 @@ function App() {
 }
 
 export default App;
+
