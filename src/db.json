@@ -1,16 +1,20 @@
-[
-   {
+{
+  "paychecks": [
+    {
       "id": 1,
       "description": "paycheck",
       "transactionType": "income",
       "amount": 100,
       "category": "job"
-   },
-   {
-      "id": 2,
+    }
+  ],
+  "expenses": [
+    {
+      "id": 1,
       "description": "gas",
       "transactionType": "expense",
       "amount": -50,
       "category": "Bills and Utilities"
-   }
-]
+    }
+  ]
+}

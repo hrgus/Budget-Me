@@ -16,10 +16,10 @@ function App() {
         <Route path="/overview">
           <Overview />
         </Route>
-        <Route path="/budgetpage">
+        <Route path="/budget">
           <BudgetPage />
         </Route>
-        <Route path="/savingspage">
+        <Route path="/savings">
           <SavingsPage />
         </Route>
       </Switch>
