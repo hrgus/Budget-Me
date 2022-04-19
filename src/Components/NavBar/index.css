@@ -1,5 +1,6 @@
 nav {
-  display: block;
+  display: inline;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: chartreuse;
+  padding: 20px;
 }

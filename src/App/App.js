@@ -16,17 +16,11 @@ function App() {
         <Route path="/overview">
           <Overview />
         </Route>
-        <Route path="/BudgetPage">
+        <Route path="/budgetpage">
           <BudgetPage />
         </Route>
-        <Route path="/SavingsPage">
+        <Route path="/savingspage">
           <SavingsPage />
-        </Route>
-        <Route path="/TransactionItem">
-          <TransactionItem />
-        </Route>
-        <Route path="/TransactionsList">
-          <TransactionsList />
         </Route>
       </Switch>
     </div>
