@@ -1,12 +1,12 @@
 import "./App.css";
 import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
-import Overview from "./Components/Overview";
-import BudgetPage from "./Components/BudgetPage";
-import NavBar from "./Components/NavBar";
-import SavingsPage from "./Components/SavingsPage";
-import TransactionItem from "./Components/TransactionItem";
-import TransactionsList from "./Components/TransactionsList";
+import Overview from "../Components/Overview";
+import BudgetPage from "../Components/BudgetPage";
+import NavBar from "../Components/NavBar/NavBar";
+import SavingsPage from "../Components/SavingsPage";
+import TransactionItem from "../Components/TransactionItem";
+import TransactionsList from "../Components/TransactionsList";
 
 function App() {
   return (
@@ -19,7 +19,6 @@ function App() {
         <Route path="/BudgetPage">
           <BudgetPage />
         </Route>
-
         <Route path="/SavingsPage">
           <SavingsPage />
         </Route>
