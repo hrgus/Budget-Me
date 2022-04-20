@@ -1,12 +1,14 @@
 import React from "react";
 import TransactionsList from "../TransactionsList/TransactionsList";
-import ".../db.json"
+import paychecks from "../db.json";
 
-function Overview() {
+console.log(paychecks);
+
+function Overview({ paychecks }) {
   return (
     <div>
       <h1> Overview </h1>
-      <TransactionsList paycheck={}/>
+      {/* <TransactionsList paychecks={paychecks} /> */}
     </div>
   );
 }
