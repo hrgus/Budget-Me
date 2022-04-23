@@ -1,10 +1,14 @@
 import React from "react";
-import TransactionsList from "../TransactionsList/TransactionsList";
-import paychecks from "../db.json";
+import { findRenderedDOMComponentWithClass } from "react-dom/test-utils";
+// import TransactionsList from "../TransactionsList/TransactionsList";
 
-console.log(paychecks);
+function Overview() {
+  fetch("http://localhost:3000/income")
+    .then((resp) => resp.json())
+    .then((incomeData) =>
+      console.log(incomeData).then((err) => console.error(err))
+    );
 
-function Overview({ paychecks }) {
   return (
     <div>
       <h1> Overview </h1>
