@@ -28,7 +28,7 @@ function Overview() {
         // console.log(incomeAmount);
         return incomeAmount;
       });
-    // supposed to wait for the results of each fetch then subtract the total expenses from the total income
+    // awaits for the results of each fetch then subtract the total expenses from the total income
     const incomeExpenses = async () => {
       const a = await incomes;
       const b = await expenses;
