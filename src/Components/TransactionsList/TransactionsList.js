@@ -1,11 +1,7 @@
 import React from "react";
 
 function TransactionsList() {
-  return (
-    <div>
-      <ol></ol>
-    </div>
-  );
+  return <div></div>;
 }
 
 export default TransactionsList;

@@ -1,14 +1,14 @@
 {
   "income": [
     {
-      "id": 1,
+      "id": 0,
       "description": "paycheck",
       "transactionType": "income",
       "amount": 100,
       "category": "job"
     },
     {
-      "id": 2,
+      "id": 1,
       "description": "gift",
       "transactionType": "income",
       "amount": 50,
@@ -17,7 +17,7 @@
   ],
   "expenses": [
     {
-      "id": 1,
+      "id": 0,
       "description": "gas",
       "transactionType": "expense",
       "amount": -50,
