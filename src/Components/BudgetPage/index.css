@@ -1,0 +1,15 @@
+.incomeListDiv {
+  display: inline-block;
+  padding: 50px;
+  position: relative;
+  border: 5px;
+  color: coral;
+}
+
+.expenseListDiv {
+  display: inline-block;
+  padding: 50px;
+  position: relative;
+  border: 5px;
+  color: coral;
+}
