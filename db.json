@@ -20,8 +20,15 @@
       "id": 0,
       "description": "gas",
       "transactionType": "expense",
-      "amount": -50,
+      "amount": 50,
       "category": "Bills and Utilities"
+    },
+    {
+      "id": 0,
+      "description": "cigar",
+      "transactionType": "expense",
+      "amount": 10,
+      "category": "doodad & unlisted"
     }
   ]
 }
