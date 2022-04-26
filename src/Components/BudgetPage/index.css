@@ -1,3 +1,7 @@
+#budgetPageID {
+  background-color: rgb(248, 246, 136);
+}
+
 .incomeListDiv {
   display: inline-block;
   padding: 50px;
@@ -12,4 +16,22 @@
   position: relative;
   border: 5px;
   color: coral;
+}
+
+.incomeExpenseInputs {
+  padding: 2px;
+}
+
+.incomeExpenseDateInputs {
+  padding: 2px;
+  width: 80px;
+}
+
+.incomeExpenseInputButtons {
+  padding: 2px;
+  width: 25px;
+}
+
+#incomeOL {
+  color: chartreuse;
 }
