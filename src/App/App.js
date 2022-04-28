@@ -47,7 +47,7 @@ function App() {
     <div id="appDivID">
       <NavBar />
       <Switch>
-        <Route path="/overview">
+        <Route exact path="/">
           <Overview totalIncome={totalIncome} />
         </Route>
         <Route path="/budget">

@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import "./index.css";
 
 function BudgetPage() {
-  const [incomeList, setIncomeList] = useState({
-    id: 0,
-    description: "paycheck",
-    transactionType: "income",
-    amount: 100,
-    category: "job",
-  });
+  // const [incomeList, setIncomeList] = useState({
+  //   id: 0,
+  //   description: "paycheck",
+  //   transactionType: "income",
+  //   amount: 100,
+  //   category: "job",
+  // });
 
   function handleAddListItem() {
     return <li>hi</li>;
