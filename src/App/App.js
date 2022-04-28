@@ -9,12 +9,15 @@ import SavingsPage from "../Components/SavingsPage/SavingsPage";
 // import TransactionsList from "../Components/TransactionsList/TransactionsList";
 
 function App() {
-  const [totalIncome, setTotalIncome] = useState([]);
+  const [expenses, setExpenses] = useState(0);
+  const [incomes, setIncomes] = useState(0);
+  // const [totalIncome, setTotalIncome] = useState([]);
+  const [incomeList, setIncomeList] = useState([]);
 
   // fetches
   useEffect(() => {
     // returns total expenses. Adds each expense.amount
-    let expenses = fetch("http://localhost:3000/expenses")
+    fetch("http://localhost:3000/expenses")
       .then((resp) => resp.json())
       .then((respObj) => {
         // console.log(respObj);
@@ -22,39 +25,39 @@ function App() {
           return aExpense.amount + bExpense.amount;
         });
         // console.log(expenseAmount);
-        return expenseAmount;
+        setExpenses(expenseAmount);
       });
     // returns total income. Adds each income.amount
-    let incomes = fetch("http://localhost:3000/income")
+    fetch("http://localhost:3000/income")
       .then((resp) => resp.json())
       .then((respObj) => {
-        // console.log(respObj);
+        setIncomeList(respObj);
         let incomeAmount = respObj.reduce((aIncome, bIncome) => {
           return aIncome.amount + bIncome.amount;
         });
         // console.log(incomeAmount);
-        return incomeAmount;
+        setIncomes(incomeAmount);
       });
+    console.log(expenses);
     // awaits for the results of each fetch then subtract the total expenses from the total income
-    const incomeExpenses = async () => {
-      const a = await incomes;
-      const b = await expenses;
-      setTotalIncome(a - b);
-    };
-    return incomeExpenses;
   }, []);
+
+  console.log(incomeList);
+
+  const totalIncome = incomes - expenses;
+
   return (
     <div id="appDivID">
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <Overview totalIncome={totalIncome} />
+          <Overview totalIncomes={totalIncome} />
         </Route>
         <Route path="/overview">
-          <Overview totalIncome={totalIncome} />
+          <Overview totalIncomes={totalIncome} />
         </Route>
         <Route path="/budget">
-          <BudgetPage />
+          <BudgetPage incomeList={incomeList} />
         </Route>
         <Route path="/savings">
           <SavingsPage />

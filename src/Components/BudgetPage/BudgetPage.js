@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
 
-function BudgetPage() {
+function BudgetPage({ incomeList }) {
   // const [incomeList, setIncomeList] = useState({
-  //   id: 0,
-  //   description: "paycheck",
+  //   description: "paycheck 2",
   //   transactionType: "income",
   //   amount: 100,
   //   category: "job",
   // });
 
-  function handleAddListItem() {
-    return <li>hi</li>;
+  function incomeListJSX() {
+    return incomeList.map((income) => {
+      return <li key={income.id}>{income.amount}</li>;
+    });
   }
 
   return (
@@ -27,16 +28,17 @@ function BudgetPage() {
             />
             <input
               className="incomeExpenseDateInputs"
-              placeholder="mm/dd/yyyy"
+              type="date"
+              onChange={(e) => console.log(e.target.value)}
             />
             <button
               className="incomeExpenseInputButtons"
-              onClick={handleAddListItem}
+              // onClick={handleAddListItem}
             >
               +
             </button>
           </form>
-          <ol id="incomeOL">{handleAddListItem}</ol>
+          <ol id="incomeOL">{incomeListJSX()}</ol>
         </div>
       </div>
       <div className="expenseListDiv">
@@ -49,11 +51,12 @@ function BudgetPage() {
             />
             <input
               className="incomeExpenseDateInputs"
-              placeholder="mm/dd/yyyy"
+              type="date"
+              onChange={(e) => console.log(e.target.value)}
             />
             <button
               className="incomeExpenseInputButtons"
-              onClick={handleAddListItem}
+              // onClick={handleAddListItem}
             >
               {" "}
               +{" "}

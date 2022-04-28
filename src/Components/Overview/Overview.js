@@ -2,11 +2,12 @@ import React from "react";
 // import TransactionsList from "../TransactionsList/TransactionsList";
 // import BudgetPage from "../BudgetPage/BudgetPage";
 
-function Overview({ totalIncome }) {
+function Overview({ totalIncomes }) {
+  console.log(totalIncomes);
   return (
     <div>
       <h1> Total Left To Budget </h1>
-      <h2> {totalIncome} </h2>
+      <h2> {totalIncomes} </h2>
     </div>
   );
 }
