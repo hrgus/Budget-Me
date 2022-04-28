@@ -50,6 +50,9 @@ function App() {
         <Route exact path="/">
           <Overview totalIncome={totalIncome} />
         </Route>
+        <Route path="/overview">
+          <Overview totalIncome={totalIncome} />
+        </Route>
         <Route path="/budget">
           <BudgetPage />
         </Route>
