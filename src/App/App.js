@@ -11,10 +11,9 @@ import SavingsPage from "../Components/SavingsPage/SavingsPage";
 function App() {
   const [expenses, setExpenses] = useState(0);
   const [incomes, setIncomes] = useState(0);
-  // const [totalIncome, setTotalIncome] = useState([]);
   const [incomeList, setIncomeList] = useState([]);
 
-  // fetches
+  // this useEffect fetches the expenses and the income object from db.json
   useEffect(() => {
     // returns total expenses. Adds each expense.amount
     fetch("http://localhost:3000/expenses")
@@ -38,11 +37,9 @@ function App() {
         // console.log(incomeAmount);
         setIncomes(incomeAmount);
       });
-    console.log(expenses);
+
     // awaits for the results of each fetch then subtract the total expenses from the total income
   }, []);
-
-  console.log(incomeList);
 
   const totalIncome = incomes - expenses;
 
@@ -60,7 +57,7 @@ function App() {
           <BudgetPage incomeList={incomeList} />
         </Route>
         <Route path="/savings">
-          <SavingsPage />
+          <SavingsPage incomeList={incomeList} />
         </Route>
       </Switch>
     </div>

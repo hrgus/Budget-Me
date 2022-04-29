@@ -1,14 +1,7 @@
-import React, { useState, useEffect } from "react";
-import "./index.css";
+import React from "react";
+import "./budgetPage.css";
 
 function BudgetPage({ incomeList }) {
-  // const [incomeList, setIncomeList] = useState({
-  //   description: "paycheck 2",
-  //   transactionType: "income",
-  //   amount: 100,
-  //   category: "job",
-  // });
-
   function incomeListJSX() {
     return incomeList.map((income) => {
       return <li key={income.id}>{income.amount}</li>;
