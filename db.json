@@ -24,7 +24,7 @@
       "category": "Bills and Utilities"
     },
     {
-      "id": 0,
+      "id": 1,
       "description": "cigar",
       "transactionType": "expense",
       "amount": 10,
