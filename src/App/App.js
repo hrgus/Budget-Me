@@ -12,6 +12,7 @@ function App() {
   const [expenses, setExpenses] = useState(0);
   const [incomes, setIncomes] = useState(0);
   const [incomeList, setIncomeList] = useState([]);
+  const [expenseList, setExpenseList] = useState([]);
 
   // this useEffect fetches the expenses and the income object from db.json
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
       .then((resp) => resp.json())
       .then((respObj) => {
         // console.log(respObj);
+        setExpenseList(respObj);
         let expenseAmount = respObj.reduce((aExpense, bExpense) => {
           return aExpense.amount + bExpense.amount;
         });
@@ -54,10 +56,10 @@ function App() {
           <Overview totalIncomes={totalIncome} />
         </Route>
         <Route path="/budget">
-          <BudgetPage incomeList={incomeList} />
+          <BudgetPage incomeList={incomeList} expenseList={expenseList} />
         </Route>
         <Route path="/savings">
-          <SavingsPage incomeList={incomeList} />
+          <SavingsPage incomeList={incomeList} expenseList={expenseList} />
         </Route>
       </Switch>
     </div>

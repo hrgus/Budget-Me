@@ -1,10 +1,16 @@
 import React from "react";
 import "./budgetPage.css";
 
-function BudgetPage({ incomeList }) {
+function BudgetPage({ incomeList, expenseList }) {
   function incomeListJSX() {
     return incomeList.map((income) => {
       return <li key={income.id}>{income.amount}</li>;
+    });
+  }
+
+  function expenseListJSX() {
+    return expenseList.map((expense) => {
+      return <li key={expense.id}>{expense.amount}</li>;
     });
   }
 
@@ -31,7 +37,7 @@ function BudgetPage({ incomeList }) {
               +
             </button>
           </form>
-          <ol id="incomeOL">{incomeListJSX()}</ol>
+          <ol id="incomeExpenseOL">{incomeListJSX()}</ol>
         </div>
       </div>
       <div className="expenseListDiv">
@@ -55,6 +61,7 @@ function BudgetPage({ incomeList }) {
               +{" "}
             </button>
           </form>
+          <ol id="incomeExpenseOL">{expenseListJSX()}</ol>
         </div>
       </div>
     </div>
