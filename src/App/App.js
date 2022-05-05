@@ -33,17 +33,21 @@ function App() {
       .then((resp) => resp.json())
       .then((respObj) => {
         setIncomeList(respObj);
-        let incomeAmount = respObj.reduce((aIncome, bIncome) => {
-          return aIncome.amount + bIncome.amount;
-        });
-        // console.log(incomeAmount);
-        setIncomes(incomeAmount);
       });
 
     // awaits for the results of each fetch then subtract the total expenses from the total income
   }, []);
 
+  useEffect(() => {
+    let incomeAmount = incomeList.reduce((acc, aIncome) => {
+      return parseInt(aIncome.amount) + acc;
+    }, 0);
+    // console.log(incomeAmount);
+    setIncomes(incomeAmount);
+  }, [incomeList]);
+
   const totalIncome = incomes - expenses;
+  console.log(incomes);
 
   return (
     <div id="appDivID">
@@ -56,7 +60,11 @@ function App() {
           <Overview totalIncomes={totalIncome} />
         </Route>
         <Route path="/budget">
-          <BudgetPage incomeList={incomeList} expenseList={expenseList} />
+          <BudgetPage
+            setIncomeList={setIncomeList}
+            incomeList={incomeList}
+            expenseList={expenseList}
+          />
         </Route>
         <Route path="/savings">
           <SavingsPage incomeList={incomeList} expenseList={expenseList} />

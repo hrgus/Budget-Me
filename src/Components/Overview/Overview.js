@@ -3,7 +3,7 @@ import React from "react";
 // import BudgetPage from "../BudgetPage/BudgetPage";
 
 function Overview({ totalIncomes }) {
-  console.log(totalIncomes);
+  // console.log(totalIncomes);
   return (
     <div>
       <h1> Total Left To Budget </h1>
