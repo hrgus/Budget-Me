@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./incomes.css";
 
 function Incomes({ setIncomeList, incomeList }) {
@@ -10,11 +10,17 @@ function Incomes({ setIncomeList, incomeList }) {
     category: "",
   });
 
+  useEffect(() => {
+    incomeListJSX();
+  }, [incomeList]);
+
   function incomeListJSX() {
     return incomeList.map((income) => {
       return (
         <li key={income.id}>
-          {income.amount} | {income.date} | {income.category}
+          {income.description} | {income.amount} | {income.date} |{" "}
+          {income.category}{" "}
+          <button onClick={() => handleDeleteIncome(income.id)}>delete</button>
         </li>
       );
     });
@@ -26,8 +32,20 @@ function Incomes({ setIncomeList, incomeList }) {
     setNewIncome(newIncomeObj);
   };
 
-  const handleChange = (e) => {
+  const handleCategoryChange = (e) => {
     setNewIncome({ ...newIncome, category: e.target.value });
+  };
+
+  const handleDeleteIncome = (id) => {
+    fetch(`http://localhost:3000/income/${id}`, {
+      method: "DELETE",
+    })
+      .then((resp) => resp.json())
+      .then((id) => {
+        window.location.reload(false);
+        console.log("You just deleted id:", id);
+      })
+      .catch((error) => alert(error));
   };
 
   const handleIncomeSubmit = (e) => {
@@ -90,7 +108,7 @@ function Incomes({ setIncomeList, incomeList }) {
           placeholder="amount"
           type="number"
         />
-        <select onChange={handleChange} id="selectIncomeExpenseType">
+        <select onChange={handleCategoryChange} id="selectIncomeExpenseType">
           <option id="job" value="job">
             job
           </option>
