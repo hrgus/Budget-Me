@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import "./incomes.css";
 
 function Incomes({ setIncomeList, incomeList }) {
-  const [newCategory, setNewCategory] = useState("job");
   const [newIncome, setNewIncome] = useState({
     description: "",
     transactionType: "income",
     amount: "",
     date: "",
-    category: newCategory,
+    category: "",
   });
-  console.log(newIncome.category);
+
   function incomeListJSX() {
     return incomeList.map((income) => {
       return (
@@ -25,6 +24,10 @@ function Incomes({ setIncomeList, incomeList }) {
     const newIncomeObj = { ...newIncome };
     newIncomeObj[e.target.id] = e.target.value;
     setNewIncome(newIncomeObj);
+  };
+
+  const handleChange = (e) => {
+    setNewIncome({ ...newIncome, category: e.target.value });
   };
 
   const handleIncomeSubmit = (e) => {
@@ -87,10 +90,7 @@ function Incomes({ setIncomeList, incomeList }) {
           placeholder="amount"
           type="number"
         />
-        <select
-          onChange={(e) => setNewCategory(e.target.value)}
-          id="selectIncomeExpenseType"
-        >
+        <select onChange={handleChange} id="selectIncomeExpenseType">
           <option id="job" value="job">
             job
           </option>

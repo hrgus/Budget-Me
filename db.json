@@ -17,62 +17,36 @@
       "category": "gifts & unlisted"
     },
     {
-      "id": "9a3f9583-7aab-4602-9f07-3108ffbb6094",
-      "description": "paycheck",
+      "description": "hey",
       "transactionType": "income",
-      "amount": "400",
-      "date": "2022-05-06",
-      "category": "job"
-    },
-    {
-      "description": "paycheck",
-      "transactionType": "income",
-      "amount": "50",
-      "date": "2022-05-10",
+      "amount": "5",
+      "date": "2022-05-09",
       "category": "job",
       "id": 2
     },
     {
-      "description": "paycheck",
+      "description": "hello",
       "transactionType": "income",
-      "amount": "50",
-      "date": "2022-05-17",
-      "category": "job",
+      "amount": "5",
+      "date": "2022-05-09",
+      "category": "",
       "id": 3
     },
     {
-      "description": "paycheck",
+      "description": "hey",
       "transactionType": "income",
-      "amount": "20",
-      "date": "2022-05-26",
-      "category": "job",
+      "amount": "6",
+      "date": "2022-05-10",
+      "category": "",
       "id": 4
     },
     {
-      "description": "gift",
+      "description": "try",
       "transactionType": "income",
-      "amount": "30",
-      "date": "2022-05-09",
-      "category": "",
+      "amount": "5",
+      "date": "2022-05-13",
+      "category": "gifts & unlisted",
       "id": 5
-    },
-    {
-      "description": "he",
-      "transactionType": "income",
-      "amount": "5",
-      "date": "2022-05-09",
-      "category": "",
-      "id": 6
-    },
-    {
-      "description": "he",
-      "transactionType": "income",
-      "amount": "5",
-      "date": "2022-05-10",
-      "category": {
-        "newCategory": "job"
-      },
-      "id": 7
     }
   ],
   "expenses": [
