@@ -39,6 +39,40 @@
       "date": "2022-05-17",
       "category": "job",
       "id": 3
+    },
+    {
+      "description": "paycheck",
+      "transactionType": "income",
+      "amount": "20",
+      "date": "2022-05-26",
+      "category": "job",
+      "id": 4
+    },
+    {
+      "description": "gift",
+      "transactionType": "income",
+      "amount": "30",
+      "date": "2022-05-09",
+      "category": "",
+      "id": 5
+    },
+    {
+      "description": "he",
+      "transactionType": "income",
+      "amount": "5",
+      "date": "2022-05-09",
+      "category": "",
+      "id": 6
+    },
+    {
+      "description": "he",
+      "transactionType": "income",
+      "amount": "5",
+      "date": "2022-05-10",
+      "category": {
+        "newCategory": "job"
+      },
+      "id": 7
     }
   ],
   "expenses": [

@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import "./incomes.css";
 
 function Incomes({ setIncomeList, incomeList }) {
+  const [newCategory, setNewCategory] = useState("job");
   const [newIncome, setNewIncome] = useState({
     description: "",
     transactionType: "income",
     amount: "",
     date: "",
-    category: "job",
+    category: { newCategory },
   });
 
   function incomeListJSX() {
@@ -25,6 +26,11 @@ function Incomes({ setIncomeList, incomeList }) {
     newIncomeObj[e.target.id] = e.target.value;
     setNewIncome(newIncomeObj);
     console.log(newIncomeObj);
+  };
+
+  const setNewIncomeCategory = (e) => {
+    const newCategoryConst = e.target.value;
+    setNewCategory(newCategoryConst);
   };
 
   const handleIncomeSubmit = (e) => {
@@ -53,7 +59,7 @@ function Incomes({ setIncomeList, incomeList }) {
           transactionType: "income",
           amount: "",
           date: "",
-          category: "job",
+          category: "",
         });
       });
   };
@@ -62,7 +68,7 @@ function Incomes({ setIncomeList, incomeList }) {
     <div id="budgetPageID">
       <h3> Income </h3>
       <form onSubmit={(e) => handleIncomeSubmit(e)}>
-        <input // input for the description
+        <input // input for new description
           className="incomeExpenseInputs"
           onChange={(e) => handleNewIncome(e)}
           id="description"
@@ -70,7 +76,7 @@ function Incomes({ setIncomeList, incomeList }) {
           placeholder="Your New Income Here..."
           type="text"
         />
-        <input // input for the date
+        <input // input for new date
           className="incomeExpenseDateInputs"
           onChange={(e) => handleNewIncome(e)}
           id="date"
@@ -78,7 +84,7 @@ function Incomes({ setIncomeList, incomeList }) {
           placeholder="date"
           type="date"
         />
-        <input // input for the amount
+        <input // input for new amount
           className="incomeExpenseInputs"
           onChange={(e) => handleNewIncome(e)}
           id="amount"
@@ -86,7 +92,10 @@ function Incomes({ setIncomeList, incomeList }) {
           placeholder="amount"
           type="number"
         />
-        <select id="selectIncomeExpenseType">
+        <select
+          onChange={(e) => setNewIncomeCategory(e)}
+          id="selectIncomeExpenseType"
+        >
           <option id="job" value="job">
             job
           </option>
