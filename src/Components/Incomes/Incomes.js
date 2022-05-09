@@ -8,9 +8,9 @@ function Incomes({ setIncomeList, incomeList }) {
     transactionType: "income",
     amount: "",
     date: "",
-    category: { newCategory },
+    category: newCategory,
   });
-
+  console.log(newIncome.category);
   function incomeListJSX() {
     return incomeList.map((income) => {
       return (
@@ -25,12 +25,6 @@ function Incomes({ setIncomeList, incomeList }) {
     const newIncomeObj = { ...newIncome };
     newIncomeObj[e.target.id] = e.target.value;
     setNewIncome(newIncomeObj);
-    console.log(newIncomeObj);
-  };
-
-  const setNewIncomeCategory = (e) => {
-    const newCategoryConst = e.target.value;
-    setNewCategory(newCategoryConst);
   };
 
   const handleIncomeSubmit = (e) => {
@@ -61,7 +55,8 @@ function Incomes({ setIncomeList, incomeList }) {
           date: "",
           category: "",
         });
-      });
+      })
+      .catch((error) => console.error(error));
   };
 
   return (
@@ -93,7 +88,7 @@ function Incomes({ setIncomeList, incomeList }) {
           type="number"
         />
         <select
-          onChange={(e) => setNewIncomeCategory(e)}
+          onChange={(e) => setNewCategory(e.target.value)}
           id="selectIncomeExpenseType"
         >
           <option id="job" value="job">

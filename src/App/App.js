@@ -42,12 +42,10 @@ function App() {
     let incomeAmount = incomeList.reduce((acc, aIncome) => {
       return parseInt(aIncome.amount) + acc;
     }, 0);
-    // console.log(incomeAmount);
     setIncomes(incomeAmount);
   }, [incomeList]);
 
   const totalIncome = incomes - expenses;
-  console.log(incomes);
 
   return (
     <div id="appDivID">
