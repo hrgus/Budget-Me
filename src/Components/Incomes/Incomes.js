@@ -43,7 +43,7 @@ function Incomes({ setIncomeList, incomeList }) {
       .then((resp) => resp.json())
       .then((id) => {
         window.location.reload(false);
-        console.log("You just deleted id:", id);
+        console.log("You just deleted an income:", id);
       })
       .catch((error) => alert(error));
   };
@@ -67,7 +67,7 @@ function Incomes({ setIncomeList, incomeList }) {
         return resp.json();
       })
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setIncomeList([...incomeList, data]);
         setNewIncome({
           description: "",

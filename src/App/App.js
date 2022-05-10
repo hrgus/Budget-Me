@@ -62,6 +62,7 @@ function App() {
             setIncomeList={setIncomeList}
             incomeList={incomeList}
             expenseList={expenseList}
+            setExpenseList={setExpenseList}
           />
         </Route>
         <Route path="/savings">
