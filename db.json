@@ -15,6 +15,14 @@
       "amount": 50,
       "date": "2022-04-14",
       "category": "gifts & unlisted"
+    },
+    {
+      "description": "fee",
+      "transactionType": "income",
+      "amount": "1",
+      "date": "2022-05-13",
+      "category": "",
+      "id": 2
     }
   ],
   "expenses": [

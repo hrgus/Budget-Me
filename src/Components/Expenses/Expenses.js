@@ -53,10 +53,19 @@ function Expenses({ expenseList, setExpenseList }) {
 
   const handleExpenseSubmit = (e) => {
     e.preventDefault();
+    console.log(
+      JSON.stringify({
+        description: newExpense.description,
+        transactionType: "expense",
+        amount: newExpense.amount,
+        date: newExpense.date,
+        category: newExpense.category,
+      })
+    );
     fetch("http://localhost:3000/expenses", {
       method: "POST",
       headers: {
-        "Content-Type": "application-json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         description: newExpense.description,
@@ -71,7 +80,7 @@ function Expenses({ expenseList, setExpenseList }) {
       })
       .then((data) => {
         setExpenseList([...expenseList, data]);
-        console.log(expenseList);
+        console.log(data);
         setNewExpense({
           description: "",
           transactionType: "expense",

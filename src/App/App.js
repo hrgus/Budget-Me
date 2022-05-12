@@ -19,15 +19,7 @@ function App() {
     // returns total expenses. Adds each expense.amount
     fetch("http://localhost:3000/expenses")
       .then((resp) => resp.json())
-      .then((respObj) => {
-        // console.log(respObj);
-        setExpenseList(respObj);
-        let expenseAmount = respObj.reduce((aExpense, bExpense) => {
-          return aExpense.amount + bExpense.amount;
-        });
-        // console.log(expenseAmount);
-        setExpenses(expenseAmount);
-      });
+      .then((respObj) => {});
     // returns total income. Adds each income.amount
     fetch("http://localhost:3000/income")
       .then((resp) => resp.json())
@@ -37,6 +29,13 @@ function App() {
 
     // awaits for the results of each fetch then subtract the total expenses from the total income
   }, []);
+
+  useEffect(() => {
+    let expenseAmount = expenseList.reduce((acc, aExpense) => {
+      return parseInt(aExpense.amount) + acc;
+    });
+    setExpenses(expenseAmount);
+  }, [expenseList]);
 
   useEffect(() => {
     let incomeAmount = incomeList.reduce((acc, aIncome) => {
