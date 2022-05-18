@@ -19,7 +19,9 @@ function App() {
     // returns total expenses. Adds each expense.amount
     fetch("http://localhost:3000/expenses")
       .then((resp) => resp.json())
-      .then((respObj) => {});
+      .then((respObj) => {
+        setExpenseList(respObj);
+      });
     // returns total income. Adds each income.amount
     fetch("http://localhost:3000/income")
       .then((resp) => resp.json())
@@ -33,7 +35,7 @@ function App() {
   useEffect(() => {
     let expenseAmount = expenseList.reduce((acc, aExpense) => {
       return parseInt(aExpense.amount) + acc;
-    });
+    }, 0);
     setExpenses(expenseAmount);
   }, [expenseList]);
 

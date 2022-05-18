@@ -17,12 +17,36 @@
       "category": "gifts & unlisted"
     },
     {
-      "description": "fee",
+      "description": "Paycheck 2",
       "transactionType": "income",
-      "amount": "1",
-      "date": "2022-05-13",
+      "amount": "500",
+      "date": "2022-05-11",
       "category": "",
       "id": 2
+    },
+    {
+      "description": "hh",
+      "transactionType": "income",
+      "amount": "3",
+      "date": "2022-05-11",
+      "category": "gifts & unlisted",
+      "id": 3
+    },
+    {
+      "description": "cash",
+      "transactionType": "income",
+      "amount": "5",
+      "date": "2022-05-19",
+      "category": "job",
+      "id": 4
+    },
+    {
+      "description": "rr",
+      "transactionType": "income",
+      "amount": "3",
+      "date": "2022-05-12",
+      "category": "",
+      "id": 5
     }
   ],
   "expenses": [
@@ -41,6 +65,22 @@
       "amount": 10,
       "date": "2022-04-12",
       "category": "doodad & unlisted"
+    },
+    {
+      "description": "Gas",
+      "transactionType": "expense",
+      "amount": "60",
+      "date": "2022-05-27",
+      "category": "bills & utilities",
+      "id": 3
+    },
+    {
+      "description": "few",
+      "transactionType": "expense",
+      "amount": "3",
+      "date": "2022-05-18",
+      "category": "",
+      "id": 4
     }
   ]
 }

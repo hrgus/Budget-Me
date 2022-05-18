@@ -18,6 +18,7 @@ function Incomes({ setIncomeList, incomeList }) {
     return incomeList.map((income) => {
       return (
         <li key={income.id}>
+          {/* {console.log(income.category)} */}
           {income.description} | {income.amount} | {income.date} |{" "}
           {income.category}{" "}
           <button onClick={() => handleDeleteIncome(income.id)}>delete</button>
@@ -67,7 +68,6 @@ function Incomes({ setIncomeList, incomeList }) {
         return resp.json();
       })
       .then((data) => {
-        // console.log(data);
         setIncomeList([...incomeList, data]);
         setNewIncome({
           description: "",
@@ -77,7 +77,7 @@ function Incomes({ setIncomeList, incomeList }) {
           category: "",
         });
       })
-      .catch((error) => console.error(error));
+      .catch((error) => alert(error));
   };
 
   return (

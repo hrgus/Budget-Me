@@ -42,26 +42,16 @@ function Expenses({ expenseList, setExpenseList }) {
     fetch(`http://localhost:3000/expenses/${id}`, {
       method: "DELETE",
     })
-      .then((resp) =>
-        resp.json().then((id) => {
-          window.location.reload(false);
-          console.log("You just deleted an expense:", id);
-        })
-      )
+      .then((resp) => resp.json())
+      .then((id) => {
+        window.location.reload(false);
+        console.log("You just deleted an expense:", id);
+      })
       .catch((error) => alert(error));
   };
 
   const handleExpenseSubmit = (e) => {
     e.preventDefault();
-    console.log(
-      JSON.stringify({
-        description: newExpense.description,
-        transactionType: "expense",
-        amount: newExpense.amount,
-        date: newExpense.date,
-        category: newExpense.category,
-      })
-    );
     fetch("http://localhost:3000/expenses", {
       method: "POST",
       headers: {
@@ -80,7 +70,6 @@ function Expenses({ expenseList, setExpenseList }) {
       })
       .then((data) => {
         setExpenseList([...expenseList, data]);
-        console.log(data);
         setNewExpense({
           description: "",
           transactionType: "expense",
